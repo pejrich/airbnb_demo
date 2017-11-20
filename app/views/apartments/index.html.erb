@@ -1,3 +1,20 @@
-<h1>All Apartments</h1>
+<h1 class="text-center">All Apartments</h1>
+<%= @data %>
 
-<p> <%= @data %> </p>
+<div class="container">
+  <div class="row">
+    <% @data.each do |apartment| %>
+      <%= link_to apartment_path, class: "card-link" do %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= apartment["imageUrl"] %>);">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2><%= apartment["name"]%></h2>
+              <p><%= "#{apartment["price"]} #{apartment["priceCurrency"]}" %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
