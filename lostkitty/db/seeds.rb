@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+9.times do
+  Pet.create(name: Faker::Food.dish, address: Faker::Pokemon.location, category: Pet::CATEGORIES.sample)
+end

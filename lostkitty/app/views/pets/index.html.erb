@@ -1,0 +1,9 @@
+<h1>MUST LOOOOVE PETS!!!!!!!!!!/ CHICKEN FAJITAS</h1>
+<ul>
+<% @pets.each do |pet| %>
+<li> <%= link_to pet_path(pet) do %>
+  <%="#{pet.name} loves you! Do you love #{pet.name}?????????" %>
+  <% end %>
+</li>
+<% end %>
+</ul>
